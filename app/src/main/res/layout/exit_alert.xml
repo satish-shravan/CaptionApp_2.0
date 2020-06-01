@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/activity_back"
+    android:gravity="center"
+
+    android:padding="20dp"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/thanks"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/exit_back"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/secular_one"
+            android:text="Thank You ! Visit Again !!"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:fontFamily="@font/scada"
+            android:text="Dear User !Thank You and Hope you are enjoying our services. Do review and Rate Us 5 star 🌟 on PlayStore.#GoodThingsForUs "
+            android:textSize="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

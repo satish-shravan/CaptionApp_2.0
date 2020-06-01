@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_insta_new"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".AboutUs">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#EDEAEA"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#5C59EC"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:text="Made with ️💯❤"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#F607C868"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="We are the Developers"/>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#055FBA"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:fontFamily="@font/secular_one"
+                android:text="Photo without captions is like a book without a title. You may have got the right photo but expressing your feelings behind it plays a major role in your overall interaction with the photo."/>
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:src="@mipmap/icon"></ImageView>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DCE10715"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="Stay Connected ! Stay Updated !"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E50E0E0E"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="Connect with Us ! 🙋‍♂️❣️ "/>
+
+
+
+
+                <ImageView
+                    android:id="@+id/followus"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/insta_sr"
+                    ></ImageView>
+
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DB06F8"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:fontFamily="@font/secular_one"
+                android:text="️❣️ SHAYARI WORLD ️❣️"/>
+
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@android:drawable/star_big_on" />
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

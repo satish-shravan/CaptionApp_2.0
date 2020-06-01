@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "305402166544",
+    "firebase_url": "https://allinonecaptionapp.firebaseio.com",
+    "project_id": "allinonecaptionapp",
+    "storage_bucket": "allinonecaptionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305402166544:android:dcf34c49303b6321b03995",
+        "android_client_info": {
+          "package_name": "shayari.world.allinonecaptionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305402166544-ko5suolc6adlkjgnghtr5c7hns6eateo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "shayari.world.allinonecaptionapp",
+            "certificate_hash": "d8c3fd7107d2b0e4b4b42daa0e55c47f121ba85c"
+          }
+        },
+        {
+          "client_id": "305402166544-utngvbubcfmpi6hlmar00ub701er457d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqQwlfLMbKQYBZe-uT9_PAyCvE-gzhUiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305402166544-utngvbubcfmpi6hlmar00ub701er457d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

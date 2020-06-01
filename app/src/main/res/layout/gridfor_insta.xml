@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:background="@drawable/background_insta"
+    android:id="@+id/ly"
+    android:padding="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="12dp">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#F8F5F5"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:clickable="true"
+                    android:src="@drawable/cool" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Photo"
+                android:textColor="#050505"
+                android:textStyle="bold"
+                android:fontFamily="sans--black"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+</LinearLayout>

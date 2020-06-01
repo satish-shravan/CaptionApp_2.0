@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/activity_back"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="5dp"
+        android:id="@+id/caption_of_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D83838"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Caption of the Day"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:fontFamily="@font/secular_one"
+                />
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:id="@+id/caption_day"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Captions of the day"
+                android:textSize="20dp"
+                android:fontFamily="@font/scada"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/icon_back"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+
+                        android:layout_width="150dp"
+                        android:layout_height="120dp"
+                        android:clickable="true"
+                        android:src="@drawable/logodesign" />
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Captions"
+                        android:textSize="35dp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hashtag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp">
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/background_insta_new"
+                    android:orientation="horizontal">
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HashTags"
+                        android:textSize="35dp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="120dp"
+                        android:clickable="true"
+                        android:src="@drawable/hashtag" />
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/trending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp">
+
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/icon_back"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="120dp"
+                        android:clickable="true"
+                        android:src="@drawable/trending" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inspire Me"
+                        android:textSize="35dp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
