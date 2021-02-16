@@ -1,14 +1,17 @@
 package shayari.world.allinonecaptionapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 
 import java.util.ArrayList;
@@ -33,28 +36,17 @@ public class sleepy extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_sleepy );
 
+        getSupportActionBar ().setDisplayHomeAsUpEnabled ( true );
+
         //ads
-
-
-
         AdView adView = new AdView ( this );
-        // AdView adView1 = new AdView ( this );
         adView.setAdSize ( AdSize.BANNER );
-        adView.setAdUnitId ( "ca-app-pub-8999624060144617/7678695184" );
-        //adView1.setAdSize ( AdSize.BANNER );
-        //adView1.setAdUnitId ( "ca-app-pub-3940256099942544/6300978111" );
-
+        adView.setAdUnitId ( getString ( R.string.admob_banner_id ) );
         mAdView = (AdView) findViewById ( R.id.adView );
-        // mAdView1 = (AdView) findViewById ( R.id.adView1 );
-
         AdRequest adRequest = new AdRequest.Builder ().build ();
         mAdView.loadAd ( adRequest );
-//        mAdView1.loadAd ( adRequest );
 
-        AdRequest adRequest1 = new AdRequest.Builder ().build ();
-
-
-
+        showAd ();
 
 
         recyclerView = findViewById ( R.id.recycler );
@@ -66,6 +58,27 @@ public class sleepy extends AppCompatActivity {
         recyclerView.setAdapter ( adapterRecyclerLinear );
         // Toast.makeText ( this, "CLICK TO SHARE  :)", Toast.LENGTH_LONG ).show ();
         linearList ();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
+    }
+
+    public void showAd()
+    {
+        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
+
+        mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+
     }
 
 
@@ -131,4 +144,22 @@ public class sleepy extends AppCompatActivity {
 
         // list.add(new Data_show ( "" ));
     }
+
+    @Override
+    public void onBackPressed() {
+        if (mPublisherInterstitialAd.isLoaded()) {
+            mPublisherInterstitialAd.show();
+            mPublisherInterstitialAd.setAdListener(new AdListener () {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    finish();
+                }
+            });
+        }else{
+            super.onBackPressed();
+        }
+
+    }
+
 }

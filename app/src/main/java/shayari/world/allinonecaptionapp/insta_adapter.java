@@ -1,14 +1,19 @@
 package shayari.world.allinonecaptionapp;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +24,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.sql.SQLTransactionRollbackException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,6 +35,8 @@ public class insta_adapter extends RecyclerView.Adapter<insta_adapter.ViewHolder
 
     Context context;
     ArrayList<data> list;
+
+    private  AdView popup_ad;
 
 
     private  int lastPosition =-1;
@@ -59,6 +69,37 @@ public class insta_adapter extends RecyclerView.Adapter<insta_adapter.ViewHolder
 
             @Override
             public void onClick(View v) {
+
+
+                //dialog pop up
+                final Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.popup_layout);
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.setCancelable(false);
+                dialog.show();
+
+                popup_ad = (AdView) ( dialog.findViewById ( R.id.adViewd ) );
+                popup_ad.loadAd ( new AdRequest.Builder().build () );
+
+
+
+                ((TextView) dialog.findViewById ( R.id.txtclose )).setOnClickListener ( new View.OnClickListener () {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss ();
+                    }
+                } );
+
+                ((Button) dialog.findViewById ( R.id.rateus )).setOnClickListener ( new View.OnClickListener () {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent ( Intent.ACTION_VIEW, Uri.parse ( "https://play.google.com/store/apps/details?id=shayari.world.allinonecaptionapp&hl=en" ) );
+                        context.startActivity ( intent );
+                    }
+                } );
+
+
+
 
                 ClipboardManager clipboardManager = (ClipboardManager)context.getSystemService ( Context.CLIPBOARD_SERVICE );
                 ClipData clipData = ClipData.newPlainText ( "text",text );

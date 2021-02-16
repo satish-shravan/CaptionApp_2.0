@@ -1,6 +1,7 @@
 package shayari.world.allinonecaptionapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,26 +36,15 @@ public class get_wellsoon extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_get_wellsoon );
 
-        //ads
+        getSupportActionBar ().setDisplayHomeAsUpEnabled ( true );
 
-
-
+//ads
         AdView adView = new AdView ( this );
-        // AdView adView1 = new AdView ( this );
         adView.setAdSize ( AdSize.BANNER );
-        adView.setAdUnitId ( "ca-app-pub-8999624060144617/7678695184" );
-        //adView1.setAdSize ( AdSize.BANNER );
-        //adView1.setAdUnitId ( "ca-app-pub-3940256099942544/6300978111" );
-
+        adView.setAdUnitId ( getString ( R.string.admob_banner_id ) );
         mAdView = (AdView) findViewById ( R.id.adView );
-        // mAdView1 = (AdView) findViewById ( R.id.adView1 );
-
         AdRequest adRequest = new AdRequest.Builder ().build ();
         mAdView.loadAd ( adRequest );
-//        mAdView1.loadAd ( adRequest );
-
-        AdRequest adRequest1 = new AdRequest.Builder ().build ();
-
 
         showAd ();
 
@@ -70,32 +60,29 @@ public class get_wellsoon extends AppCompatActivity {
         linearList ();
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
+    }
+
     public void showAd()
     {
         mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("ca-app-pub-8999624060144617/7469428731");
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
 
         mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
 
     }
 
 
-    @Override
-    public void onBackPressed() {
-        if (mPublisherInterstitialAd.isLoaded()) {
-            mPublisherInterstitialAd.show();
-            mPublisherInterstitialAd.setAdListener(new AdListener () {
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-                    finish();
-                }
-            });
-        }else{
-            super.onBackPressed();
-        }
 
-    }
 
     private void linearList()
     {

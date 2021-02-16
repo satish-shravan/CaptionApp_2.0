@@ -2,9 +2,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="shayari.world.allinonecaptionapp.MainActivity">
+
+    <item
+        android:id="@+id/Followus"
+        android:orderInCategory="100"
+        android:title="Follow Us !"/>
+
+    <item
+        android:id="@+id/rateus"
+        android:orderInCategory="100"
+        android:title="Rate App !"/>
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="About Us !"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/moreapp"
+        android:orderInCategory="100"
+        android:title="More Apps"/>
+
+
+
 </menu>

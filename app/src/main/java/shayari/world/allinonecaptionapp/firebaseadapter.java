@@ -65,7 +65,7 @@ public  class firebaseadapter extends RecyclerView.Adapter<firebaseadapter.ViewH
 
         request.setNotificationVisibility ( DownloadManager.Request.VISIBILITY_VISIBLE );
 
-        request.setDestinationInExternalFilesDir ( context,directoryDownloads,"Images_" );
+        request.setDestinationInExternalFilesDir ( context,directoryDownloads,"Caption_Images_" );
 
         downloadManager.enqueue ( request );
 

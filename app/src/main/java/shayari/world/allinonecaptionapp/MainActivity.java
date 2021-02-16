@@ -29,6 +29,9 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -46,14 +49,17 @@ public class MainActivity extends AppCompatActivity {
     CardView caption_of_day;
     TextView day_cap;
 
+    int i=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
 
 
-
         showAd ();
+
+        /*
 
         ScheduledExecutorService scheduledExecutorService =
                 Executors.newSingleThreadScheduledExecutor ();
@@ -70,19 +76,17 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         showAd ();
+
                     }
                 } );
             }
 
-        }, 100, 250, TimeUnit.SECONDS );
+        }, 100, 150, TimeUnit.SECONDS );
+
+         */
 
         mPublisherInterstitialAd.loadAd ( new PublisherAdRequest.Builder ().build () );
         mPublisherInterstitialAd.show ();
-
-
-
-
-
 
         mPublisherInterstitialAd.setAdListener(new AdListener () {
             @Override
@@ -98,8 +102,42 @@ public class MainActivity extends AppCompatActivity {
         caption_of_day = findViewById ( R.id.caption_of_day );
         day_cap = findViewById ( R.id.caption_day );
 
-        day_cap.setText ( "Keep smiling because life is a beautiful thing and there’s so much to smile about." );
+        final String[] arr = {"Quitter Never Win and Winners will never Quit.",
 
+                "Men are born to succeed, not fail.",
+
+                "Learn to wait. There’s always time for everything.",
+
+                "Everything You need is already inside you, Get Started.",
+
+                "If you woke up without a goal then go back to sleep.",
+
+                "Accept the challenges so that you can feel the exhilaration of victory.",
+
+                "I can. I will. End of story.",
+
+                "One day all your hard work will pay off.",
+
+                "The action is the foundational key to all success.",
+
+                "No matter how down you are, always get up and give your best!🌸"
+
+        };
+
+
+       day_cap.post ( new Runnable () {
+           int i=0;
+           @Override
+           public void run() {
+               day_cap.setText ( arr[i] );
+               i++;
+               if(i==arr.length)
+                   i=0;
+               day_cap.postDelayed ( this,10000 );
+           }
+       } );
+
+       /*
         caption_of_day.setOnClickListener ( new View.OnClickListener () {
             String text = day_cap.getText ().toString ();
             @Override
@@ -117,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         } );
+
+        */
 
 
         caption = findViewById ( R.id.caption );
@@ -166,6 +206,27 @@ public class MainActivity extends AppCompatActivity {
             startActivity ( new Intent ( getApplicationContext (),AboutUs.class ) );
             return true;
         }
+        else if(id==R.id.Followus)
+        {
+            Toast.makeText ( this, "Follow Us !", Toast.LENGTH_SHORT ).show ();
+            Intent intent = new Intent ( Intent.ACTION_VIEW,Uri.parse ( "https://www.instagram.com/shayariworld88/" ) );
+            startActivity ( intent );
+            return true;
+        }
+        else if(id==R.id.moreapp)
+        {
+            Toast.makeText ( this, "More Apps on Play Store", Toast.LENGTH_SHORT ).show ();
+            Intent intent = new Intent ( Intent.ACTION_VIEW,Uri.parse ( "https://play.google.com/store/apps/dev?id=6075959649166349332&hl=en" ) );
+            startActivity ( intent );
+            return  true;
+        }
+        else if(id==R.id.rateus)
+        {
+            Toast.makeText ( this, "Rate App 5 \uD83C\uDF1F", Toast.LENGTH_SHORT ).show ();
+            Intent intent = new Intent ( Intent.ACTION_VIEW,Uri.parse ( "https://play.google.com/store/apps/details?id=shayari.world.allinonecaptionapp&hl=en" ) );
+            startActivity ( intent );
+            return true;
+        }
 
         return super.onOptionsItemSelected ( item );
     }
@@ -173,10 +234,8 @@ public class MainActivity extends AppCompatActivity {
     public void showAd()
     {
         mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("ca-app-pub-8999624060144617/7469428731");
-
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
         mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
-
     }
 
     @Override
@@ -193,7 +252,8 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        builder.setNegativeButton("\uD83D\uDE4B\u200D♂️Follow Us ❣️     ",new DialogInterface.OnClickListener() {
+        /*
+        builder.setNegativeButton("\uD83D\uDE4B\u200D♂️Follow Us ❣️",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //if user select "No", just cancel this dialog and continue with app
@@ -204,6 +264,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+         */
 
         builder.setNeutralButton ( "RATE US 5\uD83C\uDF1F", new DialogInterface.OnClickListener () {
             @Override

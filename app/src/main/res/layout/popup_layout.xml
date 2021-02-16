@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_gravity="center" android:orientation="vertical" android:background="#ffffff" android:padding="6dp" android:layout_width="350dp" android:layout_height="wrap_content">
+    <com.google.android.gms.ads.AdView android:id="@+id/adViewd" android:layout_width="match_parent" android:layout_height="wrap_content" app:adSize="BANNER" app:adUnitId="@string/admob_banner_id"/>
+    <TextView  android:layout_marginTop="2dp" android:textSize="15sp" android:textStyle="bold" android:textColor="#000" android:gravity="center" android:layout_gravity="start" android:id="@+id/txtclose" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="15dp" android:text="X"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/ly">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="300dp" android:layout_marginTop="15dp" android:src="@drawable/thanks"/>
+        <TextView android:textStyle="bold" android:textColor="#000" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Thankyou!"/>
+        <TextView android:textColor="#000" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Hope you enjoyed it. Give us 5 stars"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="#ffffff" android:padding="10dp" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <Button android:textStyle="bold" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/btnfollow" android:background="#014a34" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Follow Us"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="10dp" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <Button android:textStyle="bold" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/rateus" android:background="#A13430" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rate Us!"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:baselineAligned="false">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="30dp" android:layout_weight="1">
+            <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="#8E1409" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Caption Copied!"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="12sp" android:textStyle="bold" android:layout_gravity="center_horizontal" android:padding="4dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Photo is cheap, show your caption"/>
+</LinearLayout>

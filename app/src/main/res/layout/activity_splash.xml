@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFEFE"
-    android:padding="10dp"
     android:orientation="vertical"
     tools:context=".splash">
 
@@ -15,14 +14,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="0dp">
 
         <LinearLayout
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:background="#C83737"
+            android:background="#932D2D"
             android:orientation="vertical">
 
 
@@ -56,16 +55,16 @@
 
             <ImageView
                 android:id="@+id/followus"
+                android:background="#FFFFFF"
+                android:padding="3dp"
                 android:clickable="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@mipmap/icon"
+                android:src="@drawable/icon"
                 ></ImageView>
-
-
-
 
 
 

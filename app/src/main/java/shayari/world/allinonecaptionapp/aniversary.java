@@ -1,6 +1,7 @@
 package shayari.world.allinonecaptionapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,27 +37,15 @@ public class aniversary extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_aniversary );
 
+        getSupportActionBar ().setDisplayHomeAsUpEnabled ( true );
+
         //ads
-
-
-
         AdView adView = new AdView ( this );
-        // AdView adView1 = new AdView ( this );
         adView.setAdSize ( AdSize.BANNER );
-        adView.setAdUnitId ( "ca-app-pub-8999624060144617/7678695184" );
-        //adView1.setAdSize ( AdSize.BANNER );
-        //adView1.setAdUnitId ( "ca-app-pub-3940256099942544/6300978111" );
-
+        adView.setAdUnitId ( getString ( R.string.admob_banner_id ) );
         mAdView = (AdView) findViewById ( R.id.adView );
-        // mAdView1 = (AdView) findViewById ( R.id.adView1 );
-
         AdRequest adRequest = new AdRequest.Builder ().build ();
         mAdView.loadAd ( adRequest );
-//        mAdView1.loadAd ( adRequest );
-
-        AdRequest adRequest1 = new AdRequest.Builder ().build ();
-
-
 
         showAd ();
 
@@ -74,10 +63,19 @@ public class aniversary extends AppCompatActivity {
     public void showAd()
     {
         mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("ca-app-pub-8999624060144617/7469428731");
-
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
         mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
     }
 
     @Override
@@ -98,6 +96,7 @@ public class aniversary extends AppCompatActivity {
     }
 
 
+
     private void linearList()
     {
 
@@ -107,7 +106,7 @@ public class aniversary extends AppCompatActivity {
         list.add(new data (R.drawable .anniversary, "For it was not into my ear you whispered, but into my heart. It was not my lips you kissed, but my soul"));
         list.add(new data (R.drawable .anniversary,"I wish there was a word more than ‘love’ itself to convey what I feel for you."));
         list.add(new data (R.drawable .anniversary, "The minute I heard my first love story I started looking for you, not knowing how blind that was. Lovers don’t finally meet somewhere. They’re in each other all along."));
-        list.add(new data (R.drawable .anniversary, "orever is a measure of time used by people who share an ordinary love. Our extraordinary love is immeasurable ... for us, forever just won’t do."));
+        list.add(new data (R.drawable .anniversary, "Forever is a measure of time used by people who share an ordinary love. Our extraordinary love is immeasurable ... for us, forever just won’t do."));
         list.add(new data (R.drawable .anniversary,"Happy Anniversary to the person I want beside me every night for the rest of forever."));
 
         list.add(new data (R.drawable .anniversary, "Being with you under the same roof is the happiest period of my life"));

@@ -5,9 +5,16 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
+
 public class Emotions extends AppCompatActivity {
+
+    PublisherInterstitialAd mPublisherInterstitialAd;
 
     CardView angry,annoyed,confuse,calm,foodie,hurt,shy,sleepy,sad,happy;
 
@@ -15,6 +22,25 @@ public class Emotions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_emotions );
+
+        getSupportActionBar ().setDisplayHomeAsUpEnabled ( true );
+
+        //ads
+
+        showAd ();
+
+        mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+        mPublisherInterstitialAd.show ();
+
+
+        mPublisherInterstitialAd.setAdListener(new AdListener () {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+            }
+
+        });
 
         angry = (CardView) findViewById ( R.id.angry );
         annoyed = (CardView) findViewById ( R.id.annoyed );
@@ -30,7 +56,22 @@ public class Emotions extends AppCompatActivity {
         angry.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent ( getApplicationContext (),angry.class ) );
+                if(mPublisherInterstitialAd.isLoaded ())
+                {
+                    mPublisherInterstitialAd.show ();
+                    mPublisherInterstitialAd.setAdListener ( new AdListener ()
+                    {
+                        @Override
+                        public void onAdClosed() {
+                            startActivity ( new Intent ( getApplicationContext (), angry.class ) );
+                        }
+                    });
+                }
+                else {
+                    Intent intent = new Intent ( getApplicationContext (), angry.class );
+                    startActivity ( intent );
+                }
+               // startActivity ( new Intent ( getApplicationContext (),angry.class ) );
             }
         } );
 
@@ -52,20 +93,62 @@ public class Emotions extends AppCompatActivity {
         calm.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent ( getApplicationContext (),calm.class ) );
+                if(mPublisherInterstitialAd.isLoaded ())
+                {
+                    mPublisherInterstitialAd.show ();
+                    mPublisherInterstitialAd.setAdListener ( new AdListener ()
+                    {
+                        @Override
+                        public void onAdClosed() {
+                            startActivity ( new Intent ( getApplicationContext (), calm.class ) );
+                        }
+                    });
+                }
+                else {
+                    Intent intent = new Intent ( getApplicationContext (), calm.class );
+                    startActivity ( intent );
+                }
             }
         } );
 
         foodie.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent ( getApplicationContext (),foodie.class ) );
+                if(mPublisherInterstitialAd.isLoaded ())
+                {
+                    mPublisherInterstitialAd.show ();
+                    mPublisherInterstitialAd.setAdListener ( new AdListener ()
+                    {
+                        @Override
+                        public void onAdClosed() {
+                            startActivity ( new Intent ( getApplicationContext (), foodie.class ) );
+                        }
+                    });
+                }
+                else {
+                    Intent intent = new Intent ( getApplicationContext (), foodie.class );
+                    startActivity ( intent );
+                }
             }
         } );
         happy.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity ( new Intent ( getApplicationContext (),happy.class ) );
+                if(mPublisherInterstitialAd.isLoaded ())
+                {
+                    mPublisherInterstitialAd.show ();
+                    mPublisherInterstitialAd.setAdListener ( new AdListener ()
+                    {
+                        @Override
+                        public void onAdClosed() {
+                            startActivity ( new Intent ( getApplicationContext (), happy.class ) );
+                        }
+                    });
+                }
+                else {
+                    Intent intent = new Intent ( getApplicationContext (), happy.class );
+                    startActivity ( intent );
+                }
             }
         } );
 
@@ -105,6 +188,42 @@ public class Emotions extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
+    }
+
+    public void showAd()
+    {
+        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
+        mPublisherInterstitialAd.setAdUnitId( getString ( R.string.admob_interstial_id ) );
+        mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mPublisherInterstitialAd.isLoaded()) {
+            mPublisherInterstitialAd.show();
+            mPublisherInterstitialAd.setAdListener(new AdListener () {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    finish();
+                }
+            });
+        }else{
+            super.onBackPressed();
+        }
+
+    }
+
 
 
 }

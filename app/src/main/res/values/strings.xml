@@ -1,4 +1,10 @@
 <resources>
+
+    <string name="admob_banner_id">ca-app-pub-1423532900430935/8700287330</string>
+    <string name="admob_interstial_id">ca-app-pub-1423532900430935/3447960659</string>
+
+    <string name="admob_banner_type">BANNER</string>
+
     <string name="app_name">CaptionApp</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->

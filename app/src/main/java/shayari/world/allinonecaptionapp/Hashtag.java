@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -32,28 +33,18 @@ public class Hashtag extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_hashtag );
 
+        getSupportActionBar ().setDisplayHomeAsUpEnabled (true );
+
         //ads
         showAd ();
 
-
+//ads
         AdView adView = new AdView ( this );
-        // AdView adView1 = new AdView ( this );
         adView.setAdSize ( AdSize.BANNER );
-        adView.setAdUnitId ( "ca-app-pub-8999624060144617/7678695184" );
-        //adView1.setAdSize ( AdSize.BANNER );
-        //adView1.setAdUnitId ( "ca-app-pub-3940256099942544/6300978111" );
-
+        adView.setAdUnitId ( getString ( R.string.admob_banner_id ) );
         mAdView = (AdView) findViewById ( R.id.adView );
-        // mAdView1 = (AdView) findViewById ( R.id.adView1 );
-
         AdRequest adRequest = new AdRequest.Builder ().build ();
         mAdView.loadAd ( adRequest );
-//        mAdView1.loadAd ( adRequest );
-
-        AdRequest adRequest1 = new AdRequest.Builder ().build ();
-
-
-
 
 
         recyclerView = findViewById ( R.id.recycler );
@@ -70,30 +61,88 @@ public class Hashtag extends AppCompatActivity {
         linearlist();
 
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
+    }
 
     public  void linearlist()
     {
+        list.add ( new data ( R.drawable.hashtag,"#love" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#instagood" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#photooftheday" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#fashion" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#beautiful" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#happy" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#like4like" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#followme" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#picoftheday" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#follow" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#selfie" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#instadaily" ) );
+        list.add ( new data ( R.drawable.hashtag,"#repost" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#nature" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#girl" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#tagsforlikes" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#amazing" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#photography" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#instamood" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#dog #cat #dogsofinstagram #catsofinstagram #puppy #dogs #cats #pet #dogstagram #instadog #animals #catsagram #pets" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#art #design #handmade #artist #drawing #ilustration #architecture #vintage #artwork #sketch #painting #interiordesign #picture #picture #color #kpop #homemade #jewelry #draw #creative #arte #instaart #digitalart #aesthetic" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#beauty #makeup #hair #nails #makeupartist #nailsart #hairstyle" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#fitness #gym #workout #fit #fitfam #bodybuilding #training #nike #fitnessmotivation #sport #yoga #hiphop #football #fitinspo #running #dance" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#food #foodporn #instafood #foodie #yummy #delicious #sweet #vegan #breakfast #cake #chocolate #lunch #healthyfood #yum #foodstagram #dinner #coffee" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#photooftheday #photography #photo #vsco #vscocam #photographer #blackandwhite #portrait #naturephotography #photoshoot #canon #instaphoto #pic #streetphotography #nikon #all_shots" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#memes #lol #meme #dankmeme" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#instagood #picoftheday #follow #instagram #tbt #followme #like4like #repost #instadaily #girl #instalike #likeforlike #follow4follow #igers #nofilter #instamood #likeforlikes #followforfollow #l4l #f4f #tagsforlikes #bestoftheday #instapic #likeforfollow #explore #followforfollowback #instafashion #travelgram #insta #tflers #instalove #new #likes #followback #instafollow #throwback #instacool #LFL #exporepage #fff #tweegram #igdaily #instago #bhfyp #webstagram #instagramers #followers #latepost #tb #likesforlikes #like4follow #regrann #top #bts" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#blogger #tiktok #sale #video #youtube #tumblr " ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#fashion #style #ootd #model #moda #look #fashionblogger #shopping #dress #shoes #fashionista #outfit #stylish " ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#nature #summer #sunset #beach #sun #sky #flower #mountains #view #water #naturelovers #sunshine #natural #sunrise #ocean #sea " ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#italy #travel #london #travelphotography #japan #nyc #trip #paris #vacation #indonesia #usa #instatravel #instambul #dubai #india #brasil #newyork" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#music #musica #musician #livemusic #newmusic #instamusic" ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#sexy #love #beautiful #happy #cute #selfie #me #friends #fun #smile #family #life #amazing #motivation #lifestyle #funny #baby #wedding #girls #inspiration #pretty #party #cool #healthy #christmas #swag #home #black #holiday #pink #blue #tattoo #happiness #winter #daily #night #anime #weekend #work #amor #blessed #health #wanderlust #spring #green #luxury #goodmorning #red #birthday #quotes #relax #adventure #sunday #mood #goodvibes #boy #morning #kids #autumn #awesome #live #iphoneonly #white #halloween #nice #goals #eyes #happybirthday #peace #memories #streetstyle #gay #colorful #homedecor #iphonesia #babygirl #healthylifestyle #loveit #ink #familia #light #day #good #friday #car #disney #entrepreneur #best #beer #loveyourself " ) );
+
+        list.add ( new data ( R.drawable.hashtag,"#popularpage #comment #art #india #meme #f #followers #new #instamood #pop #happy #insta #foryou #m #youtube #instalike #l #me #likeforlike #k #life #edit #edits #attitude #video #followback #followforfollow #best #top #bhfyp" ) );
 
 
-        list.add ( new data ( R.drawable.hashtag,"#photo #instadaily #lfl #music #cute #k #likeforlikeback #follows #life #following #happy #viral #likeme #art #style #sdv #explorepage #memes #model #s #follower #beauty #smile #likesforfollow #girl #chuvadeseguidores #explore #likelike #tiktok #selfie" ) );
 
-        list.add ( new data ( R.drawable.hashtag,"#likes #like #follow #likeforlikes #love #instagood #l #instagram #followme #likeforlike #followforfollowback #likeforfollow #followers #f #instalike #photooftheday #followback #photography #likesforlikes #comment #followforfollow #bhfyp #picoftheday #fashion #liker #likesforlike #me #likeback #beautiful #bhfyp" ) );
-
-        list.add ( new data ( R.drawable.hashtag,"Photo of the day\n"+"#photooftheday #photography #instagood #love #picoftheday #like #follow #photo #instagram #beautiful #nature #instadaily #fashion #photographer #happy #travel #art #followme #cute #instalike #style #me #ig #likes #likeforlikes #photoshoot #smile #naturephotography #travelphotography #bhfyp" ) );
-        list.add ( new data ( R.drawable.hashtag,"#model #portrait #l #beauty #igers #life #fun #selfie #tbt #amazing #bestoftheday #instapic #landscape #canon #f #instamood #sunset #followforfollowback #india #instaphoto #food #lifestyle #bhfyp #summer #likeforlike #travelgram #friends #insta #photographylovers #sky" ) );
-        list.add ( new data ( R.drawable.hashtag,"Style"+"\n"+"style #fashion #love #instagood #like #follow #photooftheday #photography #beautiful #ootd #model #beauty #art #instagram #picoftheday #moda #fashionblogger #instadaily #smile #girl #instafashion #cute #followme #me #happy #look #design #lifestyle #fashionista #bhfyp" ) );
-
-        list.add ( new data ( R.drawable.hashtag,"#outfit #photo #selfie #instalike #makeup #l #stylish #fun #shopping #likeforlikes #streetstyle #hair #likes #fashionstyle #handmade #amazing #myself #mensfashion #luxury #summer #styleblogger #bhfyp #dress #nature #igers #travel #shoes #blogger #swag #outfitoftheday" ) );
-        list.add ( new data ( R.drawable.hashtag,"#happy #love #instagood #like #photooftheday #smile #beautiful #cute #follow #fashion #picoftheday #instagram #fun #photography #me #life #followme #instadaily #girl #art #friends #style #nature #selfie #family #photo #instalike #happiness #travel #bhfyp" ) );
-        list.add ( new data ( R.drawable.hashtag,"#likeforlikes #beauty #summer #lifestyle #motivation #l #music #fitness #myself #likes #amazing #model #food #goodvibes #f #bhfyp #instamood #makeup #followforfollowback #inspiration #party #likeforlike #igers #insta #funny #repost #sun #baby #bestoftheday #quotes" ) );
-
-        list.add ( new data ( R.drawable.hashtag,"#friends #love #like #fun #instagood #happy #follow #family #photooftheday #smile #friendship #instagram #picoftheday #life #cute #photography #beautiful #fashion #followme #me #nature #instadaily #art #music #travel #party #selfie #girl #summer #bhfyp" ) );
-        list.add ( new data ( R.drawable.hashtag,"#food #likeforlikes #instalike #tbt #photo #l #bestfriends #girls #followforfollowback #memories #lifestyle #repost #likes #funny #f #fitness #myself #amazing #bhfyp #igers #friendshipgoals #happiness #likeforlike #amigos #memes #dance #beauty #friend #weekend #bestoftheday" ) );
-        list.add ( new data ( R.drawable.hashtag,"#selfie #like #me #love #follow #instagood #smile #photooftheday #myself #picoftheday #photography #followme #instagram #happy #instadaily #cute #l #style #fashion #girl #beautiful #life #photo #fun #instalike #makeup #likeforlikes #art #friends #bhfyp" ) );
-
-        list.add ( new data ( R.drawable.hashtag,"#model #likes #igers #beauty #instaselfie #portrait #tbt #f #selfietime #pic #nature #summer #ootd #fitness #self #likeforlike #mylife #selfies #pose #followforfollowback #instapic #gay #insta #bhfyp #igdaily #travel #hair #lifestyle #selflove #mood" ) );
-        list.add ( new data ( R.drawable.hashtag,"#instamood #instagood #instadaily #instagram #like #follow #photooftheday #love #picoftheday #instalike #igers #me #followme #photography #l #instapic #insta #life #smile #style #selfie #likeforlikes #fashion #beautiful #happy #myself #igdaily #fun #likes #bhfyp" ) );
-        list.add ( new data ( R.drawable.hashtag,"#instapic #instagood #instagram #picoftheday #like #photooftheday #instadaily #photography #instalike #love #follow #instaphoto #insta #instamood #likeforlikes #photo #nature #beautiful #likes #followme #travel #fashion #instalove #me #l #instamoment #likeforfollow #myself #instafashion #bhfyp" ) );
 
 
     }
@@ -101,7 +150,7 @@ public class Hashtag extends AppCompatActivity {
     public void showAd()
     {
         mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("ca-app-pub-8999624060144617/7469428731");
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
 
         mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
 

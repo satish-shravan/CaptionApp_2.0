@@ -71,7 +71,6 @@
 
 
     <GridView
-        android:layoutAnimation="@anim/layout_anim"
         android:id="@+id/gridview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

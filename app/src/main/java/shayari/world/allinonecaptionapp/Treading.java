@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -52,23 +53,16 @@ public class Treading extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_treading );
 
+        getSupportActionBar ().setDisplayHomeAsUpEnabled ( true );
 
 
-        AdView adView = new AdView(this);
-        // AdView adView1 = new AdView(this);
-        adView.setAdSize( AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-8999624060144617/7678695184");
-        // adView1.setAdSize( AdSize.BANNER);
-        //adView1.setAdUnitId("ca-app-pub-8999624060144617/7678695184");
-
-        mAdView = (AdView)findViewById( R.id.adView );
-        // mAdView1=(AdView)findViewById ( R.id.adView1 );
-
-        final AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        // mAdView1.loadAd ( adRequest );
-
-        AdRequest adRequest1 = new AdRequest.Builder().build();
+//ads
+        AdView adView = new AdView ( this );
+        adView.setAdSize ( AdSize.BANNER );
+        adView.setAdUnitId ( getString ( R.string.admob_banner_id ) );
+        mAdView = (AdView) findViewById ( R.id.adView );
+        AdRequest adRequest = new AdRequest.Builder ().build ();
+        mAdView.loadAd ( adRequest );
 
         showAd ();
 
@@ -91,8 +85,12 @@ public class Treading extends AppCompatActivity {
 
 
         recyclerView = findViewById ( R.id.recyclerView );
-        recyclerView.setLayoutManager ( new LinearLayoutManager ( this ) );
+        LinearLayoutManager ly = new LinearLayoutManager ( this );
+        ly.setReverseLayout ( true );
+        ly.setStackFromEnd ( true );
+        recyclerView.setLayoutManager ( ly );
         recyclerView.setHasFixedSize ( true );
+
 
         progressDialog = new ProgressDialog(this);
 
@@ -139,10 +137,21 @@ public class Treading extends AppCompatActivity {
     public void showAd()
     {
         mPublisherInterstitialAd = new PublisherInterstitialAd(this);
-        mPublisherInterstitialAd.setAdUnitId("ca-app-pub-8999624060144617/7469428731");
+        mPublisherInterstitialAd.setAdUnitId(getString ( R.string.admob_interstial_id ));
 
         mPublisherInterstitialAd.loadAd(new PublisherAdRequest.Builder().build());
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId () == android.R.id.home)
+        {
+            finish ();
+            return  true;
+        }
+        return super.onOptionsItemSelected ( item );
     }
 
     @Override

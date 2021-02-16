@@ -18,9 +18,10 @@
 
 
         <LinearLayout
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D83838"
+            android:background="#C33333"
             android:orientation="vertical">
 
             <TextView
@@ -28,8 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Caption of the Day"
-                android:textSize="25dp"
+                android:text="🔥 Motivation  "
+                android:textSize="25sp"
                 android:textColor="#fff"
                 android:textStyle="bold"
                 android:fontFamily="@font/secular_one"
@@ -43,7 +44,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Captions of the day"
-                android:textSize="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:fontFamily="@font/scada"
                 android:textColor="#fff"
                 />
@@ -90,11 +92,10 @@
 
 
                     <ImageView
-
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:clickable="true"
-                        android:src="@drawable/logodesign" />
+                        android:src="@drawable/icon" />
 
                     <TextView
                         android:layout_marginLeft="10dp"
@@ -172,7 +173,7 @@
                         android:layout_width="150dp"
                         android:layout_height="120dp"
                         android:clickable="true"
-                        android:src="@drawable/trending" />
+                        android:src="@drawable/motivation" />
 
                     <TextView
                         android:layout_width="wrap_content"

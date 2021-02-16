@@ -10,7 +10,7 @@
 
     <style name="insta" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#BD0404</item>
+        <item name="colorPrimary">#B13E3E</item>
         <item name="colorPrimaryDark">#B14848</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>

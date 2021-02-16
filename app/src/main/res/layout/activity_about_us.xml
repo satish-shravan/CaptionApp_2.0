@@ -32,25 +32,16 @@
                 android:gravity="center"
                 android:text="Made with ️💯❤"/>
 
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#F607C868"
-                android:textSize="25dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="We are the Developers"/>
-
-            <TextView
-                android:layout_marginTop="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:textColor="#055FBA"
-                android:textSize="20dp"
-                android:gravity="center"
+                android:textSize="18sp"
+                android:gravity="center_horizontal"
                 android:fontFamily="@font/secular_one"
-                android:text="Photo without captions is like a book without a title. You may have got the right photo but expressing your feelings behind it plays a major role in your overall interaction with the photo."/>
+                android:text="\n You may have got the right photo but expressing your feelings behind it plays a major role in your overall interaction with the photo.\n"/>
 
 
             <ImageView
@@ -59,7 +50,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:src="@mipmap/icon"></ImageView>
+                android:src="@drawable/icon"></ImageView>
 
             <TextView
                 android:layout_marginTop="20dp"
